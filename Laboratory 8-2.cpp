@@ -11,5 +11,28 @@
 
 using namespace std;
 
+int countWords(string str);
+
 int main()
 {
+	string input;
+
+	cout << "Enter a string or Q to quit: ";
+	getline(cin, input);
+
+	cout << "Word Count: " << countWords(input) << endl;
+
+}
+
+int countWords(string str)
+{
+	int words = 1;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == ' ')
+		{
+			words++;
+		}
+	}
+	return words;
+}
