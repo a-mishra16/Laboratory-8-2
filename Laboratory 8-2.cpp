@@ -17,19 +17,26 @@ int main()
 {
 	string input;
 
-	cout << "Enter a string or Q to quit: ";
-	getline(cin, input);
+	while (true)
+	{
+		cout << "Enter a string or Q to quit: ";
+		getline(cin, input);
 
-	cout << "Word Count: " << countWords(input) << endl;
-
+		if (input == "Q")
+		{
+			break;
+		}
+		cout << "Word Count: " << countWords(input) << endl;
+	}
 }
 
 int countWords(string str)
 {
 	int words = 1;
+
 	for (int i = 0; i < str.length(); i++)
 	{
-		if (str[i] == ' ')
+		if (str[i] == ' ' && str[i-1] != ' ')
 		{
 			words++;
 		}
